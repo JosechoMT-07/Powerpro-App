@@ -2,8 +2,14 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Powerpro" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+         <item name="colorPrimary">@color/blueApp</item>
+         <item name="colorPrimaryVariant">@color/blueApp</item>
+         <item name="android:statusBarColor">@color/blueApp</item>
     </style>
 
     <style name="Theme.Powerpro" parent="Base.Theme.Powerpro" />
+
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/yellow</item>
+    </style>
 </resources>

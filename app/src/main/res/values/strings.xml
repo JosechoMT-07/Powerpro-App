@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Powerpro</string>
+    <string name="you">You</string>
+    <string name="news">News</string>
+    <string name="modules">Modules</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="You_blank_fragment">You blank fragment</string>
+    <string name="News_blank_fragment">New blank fragment</string>
+    <string name="Modules_blank_fragment">Modules blank fragment</string>
 </resources>
