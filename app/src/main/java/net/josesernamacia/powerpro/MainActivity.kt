@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var  bottomNavigationView: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +28,6 @@ class MainActivity : AppCompatActivity() {
                     replaceFragment(ModulesFragment())
                     true
                 }
-
                 else -> false
             }
         }

@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/bottom_modules"
-        android:title="@string/modules"
-        android:icon="@drawable/nav_modules"/>
+        android:id="@+id/bottom_you"
+        android:title="@string/you"
+        android:icon="@drawable/nav_account"/>
 
     <item
         android:id="@+id/bottom_news"
@@ -12,8 +12,9 @@
         android:icon="@drawable/nav_news"/>
 
     <item
-        android:id="@+id/bottom_you"
-        android:title="@string/you"
-        android:icon="@drawable/nav_account"/>
+        android:id="@+id/bottom_modules"
+        android:title="@string/modules"
+        android:icon="@drawable/nav_modules"/>
+
 
 </menu>
