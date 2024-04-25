@@ -9,4 +9,7 @@
     <string name="News_blank_fragment">New blank fragment</string>
     <string name="Modules_blank_fragment">Modules blank fragment</string>
     <string name="m_dulos">MÓDULOS</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a leo nunc. Maecenas accumsan neque ac erat luctus laoreet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin elementum in erat vel bibendum. Morbi vitae pretium dolor. Quisque finibus, diam in elementum viverra, leo lacus semper orci, eget molestie augue mi at ex. Donec non dui gravida, maximus velit id, tristique lacus. In nec dui at justo bibendum scelerisque quis vel mauris. </string>
+    <string name="detalles">DETALLES</string>
+    <string name="noticias">NOTICIAS</string>
 </resources>
