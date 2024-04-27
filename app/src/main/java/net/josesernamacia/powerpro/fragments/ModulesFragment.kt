@@ -42,9 +42,6 @@ class ModulesFragment : Fragment() {
             val intent = Intent(context, CuadroActivity::class.java)
             startActivity(intent)
         }
-
-
         return v
     }
-
 }
