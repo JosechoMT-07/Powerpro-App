@@ -13,5 +13,10 @@
     <string name="detalles">DETALLES</string>
     <string name="noticias">NOTICIAS</string>
     <string name="potencia_requerida">Potencia Requerida</string>
+    <string name="cantidad_en_w">Cantidad en W</string>
+    <string name="cable_seg_n_potencia">DIÁMETRO DEL CABLE SEGÚN POTENCIA</string>
+    <string name="calcular">Calcular</string>
+    <string name="voltaje_de_red">Voltaje de Red</string>
+    <string name="voltaje_en_v">Voltaje en V</string>
 
 </resources>
