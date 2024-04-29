@@ -13,25 +13,29 @@ class CalcularPotenActivity : AppCompatActivity() {
 
         val edtPotencia: EditText = findViewById(R.id.edtPotencia)
         val edtVoltaje: EditText = findViewById(R.id.edtVoltaje)
+        val edtPorcentajePerdida: EditText = findViewById(R.id.editTextNumberDecimal)
         val btCalcularSeccion: Button = findViewById(R.id.btCalcularSeccion)
         val textViewResultado: TextView = findViewById(R.id.textView2)
 
         btCalcularSeccion.setOnClickListener {
             val potenciaStr = edtPotencia.text.toString()
             val voltajeStr = edtVoltaje.text.toString()
+            val porcentajePerdidaStr = edtPorcentajePerdida.text.toString()
 
-            if (potenciaStr.isNotEmpty() && voltajeStr.isNotEmpty()) {
+            if (potenciaStr.isNotEmpty() && voltajeStr.isNotEmpty() && porcentajePerdidaStr.isNotEmpty()) {
                 val potencia = potenciaStr.toDouble()
                 val voltaje = voltajeStr.toDouble()
-                val caidaVoltajePermitida = 0.03 * voltaje // Suponiendo una caída del 3%
+                val porcentajePerdida = porcentajePerdidaStr.toDouble() / 100 // Convertir el porcentaje a decimal
+                val caidaVoltajePermitida = porcentajePerdida * voltaje
                 val corriente = potencia / voltaje
                 val longitudMaxima = potencia / (corriente * caidaVoltajePermitida)
 
                 textViewResultado.text = "Longitud máxima del cable: ${String.format("%.2f", longitudMaxima)} metros"
             } else {
-                textViewResultado.text = "Por favor, ingresa la potencia y el voltaje requeridos."
+                textViewResultado.text = "Por favor, ingresa la potencia, el voltaje y el porcentaje de pérdida requeridos."
             }
         }
+
 
 
     }
