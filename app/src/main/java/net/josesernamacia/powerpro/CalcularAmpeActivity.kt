@@ -52,8 +52,8 @@ class CalcularAmpeActivity : AppCompatActivity() {
     }
 
     private fun calcularDiametroCable(material: String, amperaje: Double): Double {
-        // Tabla de tamaños de cable y su capacidad de corriente en amperios
-        val tablaCables = mapOf(
+        // Tabla de tamaños de cable y su capacidad de corriente en amperios para cobre
+        val tablaCablesCobre = mapOf(
             0.75 to 7.0,
             1.0 to 10.0,
             1.5 to 15.0,
@@ -74,6 +74,32 @@ class CalcularAmpeActivity : AppCompatActivity() {
             300.0 to 300.0,
             400.0 to 340.0
         )
+
+        // Tabla de tamaños de cable y su capacidad de corriente en amperios para aluminio
+        val tablaCablesAluminio = mapOf(
+            0.75 to 5.0,
+            1.0 to 6.0,
+            1.5 to 8.0,
+            2.5 to 10.0,
+            4.0 to 13.0,
+            6.0 to 17.0,
+            10.0 to 21.0,
+            16.0 to 27.0,
+            25.0 to 34.0,
+            35.0 to 42.0,
+            50.0 to 54.0,
+            70.0 to 70.0,
+            95.0 to 84.0,
+            120.0 to 100.0,
+            150.0 to 120.0,
+            185.0 to 140.0,
+            240.0 to 170.0,
+            300.0 to 195.0,
+            400.0 to 225.0
+        )
+
+        // Seleccionar la tabla de tamaños de cable correspondiente al material seleccionado
+        val tablaCables = if (material == "Cobre") tablaCablesCobre else tablaCablesAluminio
 
         // Obtener la capacidad de corriente del tamaño de cable adecuado para el amperaje dado
         val capacidadCorriente = tablaCables.entries.firstOrNull { it.value >= amperaje }?.key ?: 0.0
