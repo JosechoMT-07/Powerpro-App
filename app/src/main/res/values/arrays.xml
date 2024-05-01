@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="materiales_cable">
+        <item>Cobre</item>
+        <item>Aluminio</item>
+    </string-array>
+</resources>

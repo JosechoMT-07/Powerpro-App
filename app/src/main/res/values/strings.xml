@@ -14,9 +14,18 @@
     <string name="noticias">NOTICIAS</string>
     <string name="potencia_requerida">Potencia Requerida</string>
     <string name="cantidad_en_w">Cantidad en W</string>
-    <string name="cable_seg_n_potencia">DIÁMETRO DEL CABLE SEGÚN POTENCIA</string>
+    <string name="cable_seg_n_potencia">LONGITUD DEL CABLE SEGÚN POTENCIA</string>
     <string name="calcular">Calcular</string>
     <string name="voltaje_de_red">Voltaje de Red</string>
     <string name="voltaje_en_v">Voltaje en V</string>
+    <string name="longitud_por_potencia">Longitud por potencia</string>
+    <string name="cuadro_el_ctrico">Cuadro eléctrico</string>
+    <string name="diametro_por_amperaje">Diametro por amperaje</string>
+    <string name="instalaci_n_solar">Instalación Solar</string>
+    <string name="pr_ximamente">Próximamente</string>
+    <string name="di_metro_del_cable_seg_n_amperaje">DIÁMETRO DEL CABLE SEGÚN AMPERAJE</string>
+    <string name="promt_elgir">Elige el material del cable</string>
+    <string name="material_del_cable">Material del cable</string>
+
 
 </resources>

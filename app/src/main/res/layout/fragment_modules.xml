@@ -28,7 +28,7 @@
         android:layout_height="70dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:text="Instalación Solar"
+        android:text="@string/instalaci_n_solar"
         android:textSize="25sp" />
 
     <Button
@@ -38,7 +38,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:text="Diametro por amperaje"
+        android:text="@string/diametro_por_amperaje"
         android:textSize="25sp" />
 
     <Button
@@ -48,7 +48,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:text="Diametro por potencia"
+        android:text="@string/longitud_por_potencia"
         android:textSize="25sp" />
 
     <Button
@@ -58,7 +58,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:text="Cuadro eléctrico"
+        android:text="@string/cuadro_el_ctrico"
         android:textSize="25sp" />
 
     <Button
@@ -68,7 +68,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:text="Próximamente"
+        android:text="@string/pr_ximamente"
         android:textSize="25sp" />
 
     <androidx.cardview.widget.CardView
