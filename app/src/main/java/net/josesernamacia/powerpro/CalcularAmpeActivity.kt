@@ -97,7 +97,6 @@ class CalcularAmpeActivity : AppCompatActivity() {
             300.0 to 195.0,
             400.0 to 225.0
         )
-
         // Seleccionar la tabla de tamaños de cable correspondiente al material seleccionado
         val tablaCables = if (material == "Cobre") tablaCablesCobre else tablaCablesAluminio
 
@@ -108,7 +107,6 @@ class CalcularAmpeActivity : AppCompatActivity() {
         if (capacidadCorriente == 0.0) {
             return 0.0
         }
-
         return capacidadCorriente
     }
 
@@ -127,5 +125,4 @@ class CalcularAmpeActivity : AppCompatActivity() {
 
         return diametroRedondeado
     }
-
 }

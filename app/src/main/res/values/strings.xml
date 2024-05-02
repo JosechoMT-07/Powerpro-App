@@ -26,6 +26,7 @@
     <string name="di_metro_del_cable_seg_n_amperaje">DIÁMETRO DEL CABLE SEGÚN AMPERAJE</string>
     <string name="promt_elgir">Elige el material del cable</string>
     <string name="material_del_cable">Material del cable</string>
+    <string name="rendimiento_anual_de_la_instalaci_n">RENDIMIENTO ANUAL DE LA INSTALACIÓN</string>
 
 
 </resources>
