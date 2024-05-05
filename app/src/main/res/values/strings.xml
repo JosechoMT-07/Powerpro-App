@@ -27,6 +27,34 @@
     <string name="promt_elgir">Elige el material del cable</string>
     <string name="material_del_cable">Material del cable</string>
     <string name="rendimiento_anual_de_la_instalaci_n">RENDIMIENTO ANUAL SOBRE LA INSTALACIÓN</string>
+    <string name="amperaje_del_circuito">Amperaje del Circuito</string>
+    <string name="cantidad_en_a">Cantidad en A</string>
+    <string name="porcentaje_de_perdida">Porcentaje de Perdida</string>
+    <string name="porcentaje_de_ca_da">Porcentaje de Caída</string>
+    <string name="cuadro_electrico_titulo">CUADRO ELÉCTRICO</string>
+    <string name="nombre_del_elemento">Nombre del elemento:</string>
+    <string name="ej_disyuntor_16a">Ej. Disyuntor 16A</string>
+    <string name="cantidad">Cantidad:</string>
+    <string name="ej_3">Ej. 3</string>
+    <string name="precio">Precio:</string>
+    <string name="ej_10_00">Ej. 10.00</string>
+    <string name="ver_resumen">Ver Resumen</string>
+    <string name="agregar">Agregar</string>
+    <string name="resumen">Resumen:</string>
+    <string name="ubicaci_n_geogr_fica">Ubicación geográfica:</string>
+    <string name="ciudad_pa_s">Ciudad, País</string>
+    <string name="potencia_total_instalada_kw">Potencia total instalada (kW):</string>
+    <string name="potencia_inversor">Potencia Inversor</string>
+    <string name="tipo_de_panel_solar">Tipo de panel solar:</string>
+    <string name="orientaci_n_del_panel">Orientación del panel (°):</string>
+    <string name="ej_180">Ej. 180</string>
+    <string name="inclinaci_n_del_panel">Inclinación del panel (°):</string>
+    <string name="ej_30">Ej. 30</string>
+    <string name="eficiencia_del_sistema">Eficiencia del sistema (%):</string>
+    <string name="ej_15">Ej. 15</string>
+    <string name="calcular_producci_n_anual">Calcular producción anual</string>
+    <string name="producci_n_anual_estimada">Producción anual estimada:</string>
+    <string name="textview">TextView</string>
 
 
 </resources>

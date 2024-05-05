@@ -16,13 +16,13 @@ class PhotovoltaicActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_photovoltaic)
 
-        val edtPower: EditText = findViewById(R.id.editTextPower)
+        val edtPower: EditText = findViewById(R.id.edtPowerInversor)
         val spinnerPanelType: Spinner = findViewById(R.id.spinnerPanelType)
-        val edtOrientation: EditText = findViewById(R.id.editTextOrientation)
-        val edtInclination: EditText = findViewById(R.id.editTextInclination)
-        val edtEfficiency: EditText = findViewById(R.id.editTextEfficiency)
+        val edtOrientation: EditText = findViewById(R.id.edtOrientationPanel)
+        val edtInclination: EditText = findViewById(R.id.edtInclinationPanel)
+        val edtEfficiency: EditText = findViewById(R.id.edtEfficiencySystem)
         val btnCalculate: Button = findViewById(R.id.buttonCalculate)
-        val tvResult: TextView = findViewById(R.id.textViewResult)
+        val tvResult: TextView = findViewById(R.id.tvResult)
 
         btnCalculate.setOnClickListener {
             val powerInstalled = edtPower.text.toString().toDoubleOrNull()

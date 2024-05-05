@@ -26,18 +26,20 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
-        android:text="Ubicación geográfica:"
+        android:text="@string/ubicaci_n_geogr_fica"
         android:textSize="16sp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTituloSolar" />
 
     <EditText
-        android:id="@+id/editTextLocation"
+        android:id="@+id/edtUbicacion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
-        android:hint="Ciudad, País"
+        android:textColor="@color/black"
+        android:hint="@string/ciudad_pa_s"
         app:layout_constraintEnd_toEndOf="@+id/textViewLocation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewLocation" />
@@ -50,17 +52,19 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="10dp"
         android:textSize="16sp"
-        android:text="Potencia total instalada (kW):"
+        android:textColor="@color/black"
+        android:text="@string/potencia_total_instalada_kw"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewLocation"
         app:layout_constraintTop_toBottomOf="@+id/tvTituloSolar" />
 
     <EditText
-        android:id="@+id/editTextPower"
+        android:id="@+id/edtPowerInversor"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:hint="Potencia Inversor"
+        android:hint="@string/potencia_inversor"
+        android:textColor="@color/black"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="@+id/textViewPower"
         app:layout_constraintStart_toStartOf="@+id/textViewPower"
@@ -72,10 +76,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
-        android:text="Tipo de panel solar:"
+        android:text="@string/tipo_de_panel_solar"
         android:textSize="16sp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLocation" />
+        app:layout_constraintTop_toBottomOf="@+id/edtUbicacion" />
 
     <Spinner
         android:id="@+id/spinnerPanelType"
@@ -84,22 +89,13 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
+        android:textColor="@color/black"
         android:entries="@array/panel_types"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextEfficiency"
-        app:layout_constraintEnd_toStartOf="@+id/editTextEfficiency"
+        app:layout_constraintBottom_toBottomOf="@+id/edtEfficiencySystem"
+        app:layout_constraintEnd_toStartOf="@+id/edtEfficiencySystem"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPanelType" />
 
-    <EditText
-        android:id="@+id/editTextOrientation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:hint="Ej. 180"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewOrientation" />
 
     <TextView
         android:id="@+id/textViewOrientation"
@@ -107,10 +103,23 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="40dp"
-        android:text="Orientación del panel (°):"
+        android:text="@string/orientaci_n_del_panel"
         android:textSize="16sp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerPanelType" />
+
+    <EditText
+        android:id="@+id/edtOrientationPanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:hint="@string/ej_180"
+        android:textColor="@color/black"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOrientation" />
 
     <TextView
         android:id="@+id/textViewInclination"
@@ -119,17 +128,19 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
         android:textSize="16sp"
-        android:text="Inclinación del panel (°):"
+        android:textColor="@color/black"
+        android:text="@string/inclinaci_n_del_panel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextOrientation" />
+        app:layout_constraintTop_toBottomOf="@+id/edtOrientationPanel" />
 
     <EditText
-        android:id="@+id/editTextInclination"
+        android:id="@+id/edtInclinationPanel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
-        android:hint="Ej. 30"
+        android:hint="@string/ej_30"
+        android:textColor="@color/black"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewInclination" />
@@ -140,17 +151,19 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
-        android:text="Eficiencia del sistema (%):"
+        android:text="@string/eficiencia_del_sistema"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/editTextPower"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPower" />
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/edtPowerInversor"
+        app:layout_constraintTop_toBottomOf="@+id/edtPowerInversor" />
 
     <EditText
-        android:id="@+id/editTextEfficiency"
+        android:id="@+id/edtEfficiencySystem"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:hint="Ej. 15"
+        android:hint="@string/ej_15"
+        android:textColor="@color/black"
         android:inputType="numberDecimal"
         app:layout_constraintStart_toStartOf="@+id/textViewEfficiency"
         app:layout_constraintTop_toBottomOf="@+id/textViewEfficiency" />
@@ -160,20 +173,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Calcular producción anual"
+        android:text="@string/calcular_producci_n_anual"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextInclination" />
+        app:layout_constraintTop_toBottomOf="@+id/edtInclinationPanel" />
 
     <TextView
-        android:id="@+id/textViewResult"
+        android:id="@+id/tvResult"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="10dp"
-        android:text="Producción anual estimada:"
+        android:text="@string/producci_n_anual_estimada"
         android:textSize="16sp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonCalculate" />
