@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/authActivity">
+
+    <activity
+        android:id="@+id/authActivity"
+        android:name="net.josesernamacia.powerpro.autentication.AuthActivity"
+        android:label="activity_auth"
+        tools:layout="@layout/activity_auth" />
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="net.josesernamacia.powerpro.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/modulesFragment"
+        android:name="net.josesernamacia.powerpro.fragments.ModulesFragment"
+        android:label="fragment_modules"
+        tools:layout="@layout/fragment_modules" />
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="net.josesernamacia.powerpro.fragments.NewsFragment"
+        android:label="NewsFragment" />
+    <fragment
+        android:id="@+id/youFragment"
+        android:name="net.josesernamacia.powerpro.fragments.YouFragment"
+        android:label="fragment_you"
+        tools:layout="@layout/fragment_you" />
+    <activity
+        android:id="@+id/calcularAmpeActivity"
+        android:name="net.josesernamacia.powerpro.CalcularAmpeActivity"
+        android:label="activity_calcular_ampe"
+        tools:layout="@layout/activity_calcular_ampe" />
+    <activity
+        android:id="@+id/cuadroActivity"
+        android:name="net.josesernamacia.powerpro.CuadroActivity"
+        android:label="activity_cuadro"
+        tools:layout="@layout/activity_cuadro" />
+    <activity
+        android:id="@+id/calcularPotenActivity"
+        android:name="net.josesernamacia.powerpro.CalcularPotenActivity"
+        android:label="activity_calcular_poten"
+        tools:layout="@layout/activity_calcular_poten" />
+    <activity
+        android:id="@+id/photovoltaicActivity"
+        android:name="net.josesernamacia.powerpro.PhotovoltaicActivity"
+        android:label="activity_photovoltaic"
+        tools:layout="@layout/activity_photovoltaic" />
+</navigation>
