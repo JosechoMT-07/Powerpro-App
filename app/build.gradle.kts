@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "net.josesernamacia.powerpro"
-        minSdk = 25
+        minSdk = 29
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
@@ -54,7 +54,7 @@ dependencies {
     implementation ("com.android.databinding:viewbinding:8.4.0")
 
     //BOM for Firebase
-    implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
+    implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
     implementation ("com.firebaseui:firebase-ui-auth:8.0.2")
     //implementation("com.google.firebase:firebase-auth-ktx:23.0.0")
 }

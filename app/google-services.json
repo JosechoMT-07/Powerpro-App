@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "302877851532",
-    "project_id": "powerpro-app-92aea",
-    "storage_bucket": "powerpro-app-92aea.appspot.com"
+    "project_number": "815079607209",
+    "project_id": "powerpro-app-b8729",
+    "storage_bucket": "powerpro-app-b8729.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:302877851532:android:a03c364720de43d0ed60a9",
+        "mobilesdk_app_id": "1:815079607209:android:336840324cd3a2980d12b8",
         "android_client_info": {
           "package_name": "net.josesernamacia.powerpro"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDo-LzslTT6TB1QcvcHAD0SSz7JZGu-78Q"
+          "current_key": "AIzaSyBnVTbEqurqGgu-tLBxee5wvY7eo6IGT4U"
         }
       ],
       "services": {

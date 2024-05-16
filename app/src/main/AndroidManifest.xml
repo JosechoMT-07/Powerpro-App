@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity
+
             android:name=".autentication.AuthActivity"
             android:exported="false" />
         <activity
