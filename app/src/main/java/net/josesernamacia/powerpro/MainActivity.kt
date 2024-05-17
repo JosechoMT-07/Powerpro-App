@@ -13,8 +13,8 @@ import net.josesernamacia.powerpro.fragments.YouFragment
 class MainActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var youFragment: YouFragment
-    private lateinit var tvEmailUser: TextView
-    private lateinit var tvNameUser: TextView
+    lateinit var tvEmailUser: TextView
+    lateinit var tvNameUser: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -11,8 +11,8 @@ import net.josesernamacia.powerpro.R
 
 class YouFragment : Fragment() {
 
-    private lateinit var tvEmailUser: TextView
-    private lateinit var tvNameUser: TextView
+    lateinit var tvEmailUser: TextView
+    lateinit var tvNameUser: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -87,11 +87,7 @@ class AuthActivity : AppCompatActivity() {
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
                             val user = FirebaseAuth.getInstance().currentUser
-                            if (user?.isEmailVerified == true) {
-                                showHome(user.email ?: "")
-                            } else {
-                                showToast("Please verify your email address")
-                            }
+                            showHome(user?.email ?: "")
                         } else {
                             showAlert("Error logging in","Incorrect email or password. Please try again.")
                         }
