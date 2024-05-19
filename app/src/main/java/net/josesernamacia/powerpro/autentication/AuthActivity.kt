@@ -66,8 +66,9 @@ class AuthActivity : AppCompatActivity() {
                     .createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            FirebaseAuth.getInstance().currentUser?.sendEmailVerification()
-                            showAlert("Email verification sent","Please check your email, and verify your account")
+                            //FirebaseAuth.getInstance().currentUser?.sendEmailVerification()
+                            //showAlert("Email verification sent","Please check your email, and verify your account")
+                            showAlert("Email creation account","Cuenta creada correctamente")
                         } else {
                             showAlert("Error creating account","An error occurred while creating the account. Please try again.")
                         }
@@ -112,7 +113,7 @@ class AuthActivity : AppCompatActivity() {
 
     private fun showHome(email: String){
         val homeIntent = Intent(this,MainActivity::class.java).apply {
-            putExtra("email",email)
+            //putExtra("email",email)
         }
         startActivity(homeIntent)
     }

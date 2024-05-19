@@ -1,11 +1,13 @@
 package net.josesernamacia.powerpro
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
+import net.josesernamacia.powerpro.autentication.AuthActivity
 import net.josesernamacia.powerpro.fragments.ModulesFragment
 import net.josesernamacia.powerpro.fragments.NewsFragment
 import net.josesernamacia.powerpro.fragments.YouFragment
@@ -44,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         replaceFragment(YouFragment())
 
         //Setup
-        setup()
+        //setup()
     }
 
     private fun replaceFragment(fragment: Fragment){
@@ -54,8 +56,14 @@ class MainActivity : AppCompatActivity() {
     private fun setup(){
         val email = intent.getStringExtra("email")
         email?.let {
-            youFragment.setEmail(it)
+            //youFragment.setEmail(it)
         }
+    }
+
+    fun logOutSesion (){
+        FirebaseAuth.getInstance().signOut()
+        startActivity(Intent(this,AuthActivity::class.java))
+        finish()
     }
 
 
