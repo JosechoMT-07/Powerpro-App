@@ -30,9 +30,7 @@ class YouFragment : Fragment() {
         tvEmailUser = view.findViewById(R.id.tvEmailUser)
         ivLogOut = view.findViewById(R.id.btnLogOut)
 
-
         mainActivity = MainActivity()
-
 
         ivLogOut.setOnClickListener {
             mainActivity.logOutSesion()

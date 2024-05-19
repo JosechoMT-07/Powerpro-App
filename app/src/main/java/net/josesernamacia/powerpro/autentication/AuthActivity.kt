@@ -46,6 +46,36 @@ class AuthActivity : AppCompatActivity() {
 
     }
 
+
+
+    private fun setup2(){
+        title="Autenticación"
+
+        signUpTextView.setOnClickListener {
+            if (edtEmail.text.isNotEmpty() && edtPasswordUser.text.isNotEmpty()){
+                FirebaseAuth.getInstance().createUserWithEmailAndPassword(edtEmail.text.toString(),edtPasswordUser.text.toString()).addOnCompleteListener {
+                    if (it.isSuccessful){
+                        showHome(it.result?.user?.email ?: "")
+                    }else{
+                        showAlert("Error","Se ha producido un error al crear la cuenta.")
+                    }
+                }
+            }
+        }
+
+        btSignIn.setOnClickListener {
+            if (edtEmail.text.isNotEmpty() && edtPasswordUser.text.isNotEmpty()){
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(edtEmail.text.toString(),edtPasswordUser.text.toString()).addOnCompleteListener {
+                    if (it.isSuccessful){
+                        showHome(it.result?.user?.email ?: "")
+                    }else{
+                        showAlert("Error","Se ha producido un error al crear la cuenta.")
+                    }
+                }
+            }
+        }
+    }
+
     private fun setup(){
         title = "Autenticación"
 
@@ -113,9 +143,10 @@ class AuthActivity : AppCompatActivity() {
 
     private fun showHome(email: String){
         val homeIntent = Intent(this,MainActivity::class.java).apply {
-            //putExtra("email",email)
+            putExtra("email",email)
         }
         startActivity(homeIntent)
+
     }
 
     // Mostrar un mensaje emergente

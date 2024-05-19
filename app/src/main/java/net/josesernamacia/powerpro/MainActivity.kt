@@ -46,17 +46,23 @@ class MainActivity : AppCompatActivity() {
         replaceFragment(YouFragment())
 
         //Setup
-        //setup()
+        //val bundle = intent.extras
+        //tvEmailUser.text = bundle?.getString("email")
+        //setup(tvEmailUser.text.toString())
+
+        //logOutSesion()
     }
 
     private fun replaceFragment(fragment: Fragment){
         supportFragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit()
     }
 
-    private fun setup(){
-        val email = intent.getStringExtra("email")
-        email?.let {
-            //youFragment.setEmail(it)
+    private fun setup(email: String){
+        youFragment.setEmail(email)
+
+        youFragment.ivLogOut.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            onBackPressed()
         }
     }
 
