@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
     fun logOutSesion (){
         FirebaseAuth.getInstance().signOut()
         startActivity(Intent(this,AuthActivity::class.java))
-        finish()
+        
     }
 
 

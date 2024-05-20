@@ -32,11 +32,17 @@ class YouFragment : Fragment() {
 
         mainActivity = MainActivity()
 
+
+
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         ivLogOut.setOnClickListener {
             mainActivity.logOutSesion()
         }
-
-        return view
     }
 
 
