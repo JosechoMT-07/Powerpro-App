@@ -6,45 +6,35 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
+import net.josesernamacia.powerpro.databinding.ActivityCalcularAmpeBinding
 
 class CalcularAmpeActivity : AppCompatActivity() {
 
-    // Resistividad en ohmios por metro a 20 grados Celsius
-    val RESISTIVIDAD_COBRE = 1.724e-8
-    val RESISTIVIDAD_ALUMINIO = 2.82e-8
-
-    // Factor de seguridad para la caída de voltaje (por ejemplo, 3%)
-    val FACTOR_SEGURIDAD = 0.03
+    private lateinit var binding: ActivityCalcularAmpeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_calcular_ampe)
-
-        val edtAmperaje: EditText = findViewById(R.id.edtAmperaje)
-        val spinMaterial: Spinner = findViewById(R.id.spinMaterial)
-        val btCalcDiamA: Button = findViewById(R.id.btCalcDiamA)
-        val tvResultado: TextView = findViewById(R.id.tvResultadoDiametro)
+        binding = ActivityCalcularAmpeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
-
-
-        btCalcDiamA.setOnClickListener {
+        binding.btCalcDiamA.setOnClickListener {
             // Obtener el amperaje ingresado por el usuario
-            val amperajeStr = edtAmperaje.text.toString()
+            val amperajeStr = binding.edtAmperaje.text.toString()
             if (amperajeStr.isNotEmpty()) {
                 val amperaje = amperajeStr.toDouble()
 
                 // Obtener el material de cable seleccionado
-                val materialCable = spinMaterial.selectedItem.toString()
+                val materialCable = binding.spinMaterial.selectedItem.toString()
 
                 // Realizar los cálculos según el material seleccionado y el amperaje ingresado
                 val diametroCable = calcularDiametroCable(materialCable, amperaje)
 
                 // Mostrar el resultado en el TextView
-                tvResultado.text = "El diámetro del cable necesario es: ${String.format("%.2f", diametroCable)}  mm"
+                binding.tvResultadoDiametro.text = "El diámetro del cable necesario es: ${String.format("%.2f", diametroCable)}  mm"
             } else {
                 // Manejar el caso en que el campo de amperaje esté vacío
-                tvResultado.text = "Por favor ingrese el amperaje del circuito."
+                binding.tvResultadoDiametro.text = "Por favor ingrese el amperaje del circuito."
             }
         }
 

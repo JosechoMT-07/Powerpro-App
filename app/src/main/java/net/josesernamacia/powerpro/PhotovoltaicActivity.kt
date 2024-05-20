@@ -6,30 +6,28 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
+import net.josesernamacia.powerpro.databinding.ActivityMainBinding
+import net.josesernamacia.powerpro.databinding.ActivityPhotovoltaicBinding
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.cos
 
 
 class PhotovoltaicActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityPhotovoltaicBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_photovoltaic)
+        binding = ActivityPhotovoltaicBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val edtPower: EditText = findViewById(R.id.edtPowerInversor)
-        val spinnerPanelType: Spinner = findViewById(R.id.spinnerPanelType)
-        val edtOrientation: EditText = findViewById(R.id.edtOrientationPanel)
-        val edtInclination: EditText = findViewById(R.id.edtInclinationPanel)
-        val edtEfficiency: EditText = findViewById(R.id.edtEfficiencySystem)
-        val btnCalculate: Button = findViewById(R.id.buttonCalculate)
-        val tvResult: TextView = findViewById(R.id.tvResult)
 
-        btnCalculate.setOnClickListener {
-            val powerInstalled = edtPower.text.toString().toDoubleOrNull()
-            val panelType = spinnerPanelType.selectedItem.toString()
-            val orientation = edtOrientation.text.toString().toDoubleOrNull()
-            val inclination = edtInclination.text.toString().toDoubleOrNull()
-            val efficiency = edtEfficiency.text.toString().toDoubleOrNull()
+        binding.buttonCalculate.setOnClickListener {
+            val powerInstalled = binding.edtPowerInversor.text.toString().toDoubleOrNull()
+            val panelType = binding.spinnerPanelType.selectedItem.toString()
+            val orientation = binding.edtOrientationPanel.text.toString().toDoubleOrNull()
+            val inclination = binding.edtInclinationPanel.text.toString().toDoubleOrNull()
+            val efficiency = binding.edtEfficiencySystem .text.toString().toDoubleOrNull()
 
             if (powerInstalled != null && orientation != null && inclination != null && efficiency != null) {
                 // Supongamos que conocemos las horas equivalentes de sol al año para la ubicación geográfica
@@ -58,9 +56,9 @@ class PhotovoltaicActivity : AppCompatActivity() {
 
                 // Calcular la producción anual
                 val annualProduction = powerInstalled * hoursOfSun * adjustedEfficiency * incidence
-                tvResult.text = "Producción anual estimada: ${String.format("%.2f", annualProduction)} kWh"
+                binding.tvResult.text = "Producción anual estimada: ${String.format("%.2f", annualProduction)} kWh"
             } else {
-                tvResult.text = "Por favor ingrese valores válidos para todos los campos."
+                binding.tvResult.text = "Por favor ingrese valores válidos para todos los campos."
             }
         }
     }

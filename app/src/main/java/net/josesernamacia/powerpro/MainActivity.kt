@@ -8,24 +8,24 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import net.josesernamacia.powerpro.autentication.AuthActivity
+import net.josesernamacia.powerpro.databinding.ActivityMainBinding
 import net.josesernamacia.powerpro.fragments.ModulesFragment
 import net.josesernamacia.powerpro.fragments.NewsFragment
 import net.josesernamacia.powerpro.fragments.YouFragment
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var youFragment: YouFragment
+    private lateinit var binding: ActivityMainBinding
+
     lateinit var tvEmailUser: TextView
     lateinit var tvNameUser: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation)
-
-
-        bottomNavigationView.setOnItemSelectedListener { menuItem ->
+        binding.bottomNavigation.setOnItemSelectedListener { menuItem ->
             when(menuItem.itemId){
                 R.id.bottom_you -> {
                     replaceFragment(YouFragment())
@@ -45,32 +45,12 @@ class MainActivity : AppCompatActivity() {
         youFragment = YouFragment()
         replaceFragment(YouFragment())
 
-        //Setup
-        //val bundle = intent.extras
-        //tvEmailUser.text = bundle?.getString("email")
-        //setup(tvEmailUser.text.toString())
-
-        //logOutSesion()
     }
 
     private fun replaceFragment(fragment: Fragment){
         supportFragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit()
     }
 
-    private fun setup(email: String){
-        youFragment.setEmail(email)
-
-        youFragment.ivLogOut.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            onBackPressed()
-        }
-    }
-
-    fun logOutSesion (){
-        FirebaseAuth.getInstance().signOut()
-        startActivity(Intent(this,AuthActivity::class.java))
-        
-    }
 
 
 }

@@ -12,43 +12,46 @@ import com.google.firebase.auth.FirebaseAuth
 import net.josesernamacia.powerpro.MainActivity
 import net.josesernamacia.powerpro.R
 import net.josesernamacia.powerpro.autentication.AuthActivity
+import net.josesernamacia.powerpro.databinding.FragmentYouBinding
 
 
 class YouFragment : Fragment() {
 
-    lateinit var tvEmailUser: TextView
-    lateinit var tvNameUser: TextView
-    lateinit var ivLogOut: ImageView
+    private var _binding : FragmentYouBinding? = null
+    private val binding get() = _binding!!
     private lateinit var mainActivity: MainActivity
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layou7t for this fragment
-        val view = inflater.inflate(R.layout.fragment_you, container, false)
-        tvEmailUser = view.findViewById(R.id.tvEmailUser)
-        ivLogOut = view.findViewById(R.id.btnLogOut)
+        _binding = FragmentYouBinding.inflate(inflater,container,false)
+        auth = FirebaseAuth.getInstance()
+
+        auth.currentUser?.let {
+            binding.tvEmailUser.text = it.email
+        }
 
         mainActivity = MainActivity()
-
-
-
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        ivLogOut.setOnClickListener {
-            mainActivity.logOutSesion()
-        }
+        auth = FirebaseAuth.getInstance()
+        registerEvents()
     }
 
+    private fun registerEvents() {
+        binding.btnLogOut.setOnClickListener {
+            auth.signOut()
 
-
-    fun setEmail(email: String){
-        tvEmailUser.text = email
+            val intent = Intent(activity, AuthActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            activity?.finish()
+        }
     }
 
 }

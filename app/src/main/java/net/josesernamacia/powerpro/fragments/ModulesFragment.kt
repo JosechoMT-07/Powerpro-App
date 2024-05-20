@@ -12,36 +12,38 @@ import net.josesernamacia.powerpro.CalcularPotenActivity
 import net.josesernamacia.powerpro.CuadroActivity
 import net.josesernamacia.powerpro.PhotovoltaicActivity
 import net.josesernamacia.powerpro.R
+import net.josesernamacia.powerpro.databinding.FragmentModulesBinding
 
 
 class ModulesFragment : Fragment() {
+    private var _binding : FragmentModulesBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val v: View = inflater.inflate(R.layout.fragment_modules, container, false)
-        val btnSolar: Button = v.findViewById(R.id.btSolar)
-        btnSolar.setOnClickListener {
+        _binding = FragmentModulesBinding.inflate(inflater,container,false)
+
+        binding.btSolar.setOnClickListener {
             val intent = Intent(context, PhotovoltaicActivity::class.java)
             startActivity(intent)
         }
-        val btnDiamAmp: Button = v.findViewById(R.id.btDmAmperaje)
-        btnDiamAmp.setOnClickListener {
+
+        binding.btDmAmperaje.setOnClickListener {
             val intent = Intent(context, CalcularAmpeActivity::class.java)
             startActivity(intent)
         }
-        val btnDiamPot: Button = v.findViewById(R.id.btDmPotencia)
-        btnDiamPot.setOnClickListener {
+
+        binding.btDmPotencia.setOnClickListener {
             val intent = Intent(context, CalcularPotenActivity::class.java)
             startActivity(intent)
         }
-        val btnCuadroElec: Button = v.findViewById(R.id.btCuadroElectrico)
-        btnCuadroElec.setOnClickListener {
+
+        binding.btCuadroElectrico.setOnClickListener {
             val intent = Intent(context, CuadroActivity::class.java)
             startActivity(intent)
         }
-        return v
+        return binding.root
     }
 }

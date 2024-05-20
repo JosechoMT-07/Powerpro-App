@@ -19,6 +19,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -35,6 +36,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures{
+        viewBinding = true
+    }
+
 }
 
 dependencies {
@@ -51,10 +56,10 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     //EXTRA
-    implementation ("com.android.databinding:viewbinding:8.4.0")
+    implementation ("com.android.databinding:viewbinding:8.4.1")
 
     //BOM for Firebase
-    implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
+    implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
     implementation ("com.firebaseui:firebase-ui-auth:8.0.2")
     //implementation("com.google.firebase:firebase-auth-ktx:23.0.0")
 }

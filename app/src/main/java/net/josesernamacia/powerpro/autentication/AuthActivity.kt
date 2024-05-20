@@ -8,30 +8,20 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.firebase.ui.auth.AuthUI
-import com.firebase.ui.auth.ErrorCodes
-import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
-import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.google.firebase.auth.FirebaseAuth
 import net.josesernamacia.powerpro.MainActivity
 import net.josesernamacia.powerpro.R
-import org.w3c.dom.Text
+import net.josesernamacia.powerpro.databinding.ActivityAuthBinding
 
 class AuthActivity : AppCompatActivity() {
-    private lateinit var btSignIn: Button
-    private lateinit var signUpTextView: TextView
 
-    private lateinit var edtEmail: EditText
-    private lateinit var edtPasswordUser: EditText
+    private lateinit var binding: ActivityAuthBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_auth)
+        binding = ActivityAuthBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        signUpTextView = findViewById(R.id.tvSignUp)
-        edtEmail = findViewById(R.id.edtEmail)
-        edtPasswordUser = findViewById(R.id.edtPassword)
-        btSignIn = findViewById(R.id.btSignIn)
 
         //VERIFICAMO QUE EL USUARIO ESTÁ AUTENTICADO
         val currentUser = FirebaseAuth.getInstance().currentUser
@@ -43,45 +33,15 @@ class AuthActivity : AppCompatActivity() {
             //SI NO ESTÁ AUTENTICADO CONTINUAMOS CON LA VISTA DE AUTH ACTIVITY
             setup()
         }
-
     }
 
-
-
-    private fun setup2(){
-        title="Autenticación"
-
-        signUpTextView.setOnClickListener {
-            if (edtEmail.text.isNotEmpty() && edtPasswordUser.text.isNotEmpty()){
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(edtEmail.text.toString(),edtPasswordUser.text.toString()).addOnCompleteListener {
-                    if (it.isSuccessful){
-                        showHome(it.result?.user?.email ?: "")
-                    }else{
-                        showAlert("Error","Se ha producido un error al crear la cuenta.")
-                    }
-                }
-            }
-        }
-
-        btSignIn.setOnClickListener {
-            if (edtEmail.text.isNotEmpty() && edtPasswordUser.text.isNotEmpty()){
-                FirebaseAuth.getInstance().signInWithEmailAndPassword(edtEmail.text.toString(),edtPasswordUser.text.toString()).addOnCompleteListener {
-                    if (it.isSuccessful){
-                        showHome(it.result?.user?.email ?: "")
-                    }else{
-                        showAlert("Error","Se ha producido un error al crear la cuenta.")
-                    }
-                }
-            }
-        }
-    }
 
     private fun setup(){
         title = "Autenticación"
 
-        signUpTextView.setOnClickListener {
-            val email = edtEmail.text.toString()
-            val password = edtPasswordUser.text.toString()
+        binding.tvSignUp.setOnClickListener {
+            val email = binding.edtEmail.text.toString()
+            val password = binding.edtPassword.text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 // Verificar si la contraseña cumple con los criterios
@@ -108,9 +68,9 @@ class AuthActivity : AppCompatActivity() {
             }
         }
 
-        btSignIn.setOnClickListener {
-            val email = edtEmail.text.toString()
-            val password = edtPasswordUser.text.toString()
+        binding.btSignIn.setOnClickListener {
+            val email = binding.edtEmail.text.toString()
+            val password = binding.edtPassword.text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 FirebaseAuth.getInstance()
@@ -148,14 +108,5 @@ class AuthActivity : AppCompatActivity() {
         startActivity(homeIntent)
 
     }
-
-    // Mostrar un mensaje emergente
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
-
-
-
 
 }

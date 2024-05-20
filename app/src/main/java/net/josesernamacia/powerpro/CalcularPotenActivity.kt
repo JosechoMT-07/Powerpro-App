@@ -5,22 +5,20 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import net.josesernamacia.powerpro.databinding.ActivityCalcularPotenBinding
 
 class CalcularPotenActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityCalcularPotenBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_calcular_poten)
+        binding = ActivityCalcularPotenBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val edtPotencia: EditText = findViewById(R.id.edtPotencia)
-        val edtVoltaje: EditText = findViewById(R.id.edtVoltaje)
-        val edtPorcentajePerdida: EditText = findViewById(R.id.editTextNumberDecimal)
-        val btCalcularSeccion: Button = findViewById(R.id.btCalcularSeccion)
-        val textViewResultado: TextView = findViewById(R.id.textView2)
-
-        btCalcularSeccion.setOnClickListener {
-            val potenciaStr = edtPotencia.text.toString()
-            val voltajeStr = edtVoltaje.text.toString()
-            val porcentajePerdidaStr = edtPorcentajePerdida.text.toString()
+        binding.btCalcularSeccion.setOnClickListener {
+            val potenciaStr = binding.edtPotencia.text.toString()
+            val voltajeStr = binding.edtVoltaje.text.toString()
+            val porcentajePerdidaStr = binding.editTextNumberDecimal.text.toString()
 
             if (potenciaStr.isNotEmpty() && voltajeStr.isNotEmpty() && porcentajePerdidaStr.isNotEmpty()) {
                 val potencia = potenciaStr.toDouble()
@@ -30,9 +28,9 @@ class CalcularPotenActivity : AppCompatActivity() {
                 val corriente = potencia / voltaje
                 val longitudMaxima = potencia / (corriente * caidaVoltajePermitida)
 
-                textViewResultado.text = "Longitud máxima del cable: ${String.format("%.2f", longitudMaxima)} metros"
+                binding.textView2.text = "Longitud máxima del cable: ${String.format("%.2f", longitudMaxima)} metros"
             } else {
-                textViewResultado.text = "Por favor, ingresa la potencia, el voltaje y el porcentaje de pérdida requeridos."
+                binding.textView2.text = "Por favor, ingresa la potencia, el voltaje y el porcentaje de pérdida requeridos."
             }
         }
 
