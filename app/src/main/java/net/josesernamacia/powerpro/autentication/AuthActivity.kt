@@ -35,7 +35,6 @@ class AuthActivity : AppCompatActivity() {
         }
     }
 
-
     private fun setup(){
         title = "Autenticación"
 
@@ -88,9 +87,7 @@ class AuthActivity : AppCompatActivity() {
                 showAlert("Empty fields","Please complete all fields")
             }
         }
-
     }
-
 
     private fun showAlert(titulo: String, msg:String){
         val builder = AlertDialog.Builder(this)

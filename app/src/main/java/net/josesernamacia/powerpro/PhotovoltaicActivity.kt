@@ -2,11 +2,6 @@ package net.josesernamacia.powerpro
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Spinner
-import android.widget.TextView
-import net.josesernamacia.powerpro.databinding.ActivityMainBinding
 import net.josesernamacia.powerpro.databinding.ActivityPhotovoltaicBinding
 import kotlin.math.PI
 import kotlin.math.abs
@@ -30,7 +25,6 @@ class PhotovoltaicActivity : AppCompatActivity() {
             val efficiency = binding.edtEfficiencySystem .text.toString().toDoubleOrNull()
 
             if (powerInstalled != null && orientation != null && inclination != null && efficiency != null) {
-                // Supongamos que conocemos las horas equivalentes de sol al año para la ubicación geográfica
                 val hoursOfSun = 1500 // Ejemplo de horas equivalentes de sol al año
 
                 // Convertir la orientación e inclinación a radianes
