@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import net.josesernamacia.powerpro.MainActivity
 import net.josesernamacia.powerpro.R
 import net.josesernamacia.powerpro.autentication.AuthActivity
@@ -22,6 +23,11 @@ class YouFragment : Fragment() {
     private lateinit var mainActivity: MainActivity
     private lateinit var auth: FirebaseAuth
 
+    private val db = FirebaseFirestore.getInstance()
+    private var emailUser: String? = null
+
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,8 +36,24 @@ class YouFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
 
         auth.currentUser?.let {
-            binding.tvEmailUser.text = it.email
+            emailUser = it.email
         }
+
+        db.collection("users").document(emailUser.toString()).get().addOnSuccessListener {
+            binding.edNameUser.setText(it.get("name") as String?)
+        }
+
+        binding.tvEmailUser.text = emailUser
+
+        //para añadir algun campo más a la bbdd tenemos que rellenar en el hashmap
+        binding.btnSave.setOnClickListener {
+            db.collection("users").document(emailUser.toString()).set(
+                hashMapOf("name" to binding.edNameUser.text.toString())
+            )
+        }
+
+
+
 
         mainActivity = MainActivity()
         return binding.root

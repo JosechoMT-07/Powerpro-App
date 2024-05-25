@@ -3,6 +3,7 @@ package net.josesernamacia.powerpro
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.google.firebase.firestore.FirebaseFirestore
 import net.josesernamacia.powerpro.databinding.ActivityMainBinding
 import net.josesernamacia.powerpro.fragments.ModulesFragment
 import net.josesernamacia.powerpro.fragments.NewsFragment
@@ -11,6 +12,10 @@ import net.josesernamacia.powerpro.fragments.YouFragment
 class MainActivity : AppCompatActivity() {
     private lateinit var youFragment: YouFragment
     private lateinit var binding: ActivityMainBinding
+
+    private val db = FirebaseFirestore.getInstance()
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

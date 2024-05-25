@@ -55,6 +55,13 @@
     <string name="calcular_producci_n_anual">Calcular producción anual</string>
     <string name="producci_n_anual_estimada">Producción anual estimada:</string>
     <string name="textview">TextView</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="texto_noticia">Texto Noticia</string>
+    <string name="titulo_noticia">Titulo Noticia</string>
+    <string name="welcome_to">Welcome to</string>
+    <string name="nombre">Nombre</string>
+    <string name="test">test</string>
 
 
 </resources>
