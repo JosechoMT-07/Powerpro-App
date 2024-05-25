@@ -49,7 +49,7 @@ class NewsAdapter: RecyclerView.Adapter<NewsAdapter.ViewHolder> () {
         var itemDescrp: TextView
 
         init {
-            itemImage = itemView.findViewById(R.id.img_card_News)
+            itemImage = itemView.findViewById(R.id.ivNewCard)
             itemTitle = itemView.findViewById(R.id.tv_title_card)
             itemDescrp = itemView.findViewById(R.id.tv_text_card)
         }
