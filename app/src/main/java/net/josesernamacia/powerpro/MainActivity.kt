@@ -48,4 +48,6 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit()
     }
 
+
+
 }
