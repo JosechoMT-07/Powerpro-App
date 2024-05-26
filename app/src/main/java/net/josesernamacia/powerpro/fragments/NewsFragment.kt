@@ -75,7 +75,22 @@ class NewsFragment : Fragment(), NewsAdapter.NewsAdapterClickInterface  {
     }
 
     override fun onClickedNew(news: News) {
-        TODO("Not yet implemented")
+        val detailFragment = DetailNewsFragment()
+
+        // Crear un Bundle para pasar datos al fragmento de detalles
+        val args = Bundle()
+        args.putString("title", news.title)
+        args.putString("text", news.text)
+        args.putString("image", news.image)
+
+        // Establecer los argumentos en el fragmento de detalles
+        detailFragment.arguments = args
+
+        // Reemplazar el fragmento actual con el fragmento de detalles
+        val transaction = requireActivity().supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.rvNoticias, detailFragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 
 }
