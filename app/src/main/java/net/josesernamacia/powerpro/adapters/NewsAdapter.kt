@@ -48,7 +48,7 @@ class NewsAdapter(private val news: MutableList<News>): RecyclerView.Adapter<New
                     .load(imageRef)
                     .error(R.drawable.ic_launcher_background)
                     .into(binding.ivNewCard)
-                binding.cvItem.setOnClickListener {
+                binding.btDetalles.setOnClickListener {
                     listener?.onClickedNew(this)
                 }
             }
