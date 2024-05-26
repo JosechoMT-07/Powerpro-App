@@ -2,8 +2,8 @@ package net.josesernamacia.powerpro.model
 
 
 data class News(
-    var title: String ?= null,
-    var text: String ?= null,
-    var imageURL: String ?= null
+    val title: String = "",
+    val text: String = "",
+    val image: String
 
 )
