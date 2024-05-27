@@ -31,7 +31,7 @@ class NewsFragment : Fragment(), NewsAdapter.NewsAdapterClickInterface  {
     private lateinit var newsList: MutableList<News>
     private lateinit var databaseRef: CollectionReference
 
-
+    private var detailNewsFragment: DetailNewsFragment? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -75,22 +75,12 @@ class NewsFragment : Fragment(), NewsAdapter.NewsAdapterClickInterface  {
     }
 
     override fun onClickedNew(news: News) {
-        val detailFragment = DetailNewsFragment()
+        detailNewsFragment = DetailNewsFragment.newInstance(news.title, news.text, news.image)
 
-        // Crear un Bundle para pasar datos al fragmento de detalles
-        val args = Bundle()
-        args.putString("title", news.title)
-        args.putString("text", news.text)
-        args.putString("image", news.image)
-
-        // Establecer los argumentos en el fragmento de detalles
-        detailFragment.arguments = args
-
-        // Reemplazar el fragmento actual con el fragmento de detalles
-        val transaction = requireActivity().supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.rvNoticias, detailFragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.frame_container, detailNewsFragment!!)
+            .addToBackStack(null)
+            .commit()
     }
 
 }

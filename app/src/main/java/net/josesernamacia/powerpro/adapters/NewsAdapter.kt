@@ -14,7 +14,6 @@ import net.josesernamacia.powerpro.databinding.ItemNewsBinding
 import net.josesernamacia.powerpro.model.News
 
 class NewsAdapter(private val news: MutableList<News>): RecyclerView.Adapter<NewsAdapter.NewsViewHolder> () {
-
     private lateinit var storageRef: StorageReference
 
     private var listener: NewsAdapterClickInterface? = null

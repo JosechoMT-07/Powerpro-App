@@ -7,35 +7,54 @@ import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import net.josesernamacia.powerpro.databinding.FragmentDetailNewsBinding
-
+import net.josesernamacia.powerpro.model.News
 
 
 class DetailNewsFragment : Fragment() {
-    private var _binding : FragmentDetailNewsBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentDetailNewsBinding
+    private var newsData: News? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentDetailNewsBinding.inflate(inflater,container,false)
+        binding = FragmentDetailNewsBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    companion object{
+        const val TAG = "DetailNewsFragment"
+
+        @JvmStatic
+        fun newInstance(title: String, text: String, image: String) =
+            DetailNewsFragment().apply {
+                arguments = Bundle().apply {
+                    putString("title", title)
+                    putString("text", text)
+                    putString("image", image)
+                }
+            }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        if (arguments != null) {
+            newsData = News(
+                arguments?.getString("title").toString(),
+                arguments?.getString("text").toString(),
+                arguments?.getString("image").toString()
+            )
 
-        // Recuperar los datos del Bundle
-        val args = arguments
-        val title = args?.getString("title", "")
-        val text = args?.getString("text", "")
-        val image = args?.getString("image", "")
+            binding.tvTituloNoticia.setText(newsData?.title)
+            binding.tvTextoNoticia.setText(newsData?.text)
 
-        // Actualizar la interfaz de usuario con los datos de la noticia
-        binding.tvTituloNoticia.text = title
-        binding.tvTextoNoticia.text = text
-        // Cargar la imagen utilizando Glide u otra biblioteca similar
-        Glide.with(requireContext()).load(image).into(binding.ivFotoNoticia)
+
+            // Cargar la imagen utilizando Glide
+            Glide.with(this)
+                .load(newsData?.image)
+                .into(binding.ivFotoNoticia)
+
+        }
     }
 
 
