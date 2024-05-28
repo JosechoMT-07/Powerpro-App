@@ -1,4 +1,4 @@
-package net.josesernamacia.powerpro
+package net.josesernamacia.powerpro.ui.modules
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

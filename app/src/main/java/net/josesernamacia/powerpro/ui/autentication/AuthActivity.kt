@@ -1,17 +1,11 @@
-package net.josesernamacia.powerpro.autentication
+package net.josesernamacia.powerpro.ui.autentication
 
 import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 import net.josesernamacia.powerpro.MainActivity
-import net.josesernamacia.powerpro.R
 import net.josesernamacia.powerpro.databinding.ActivityAuthBinding
 
 class AuthActivity : AppCompatActivity() {

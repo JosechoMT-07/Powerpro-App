@@ -1,4 +1,4 @@
-package net.josesernamacia.powerpro.fragments
+package net.josesernamacia.powerpro.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,12 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import net.josesernamacia.powerpro.CalcularAmpeActivity
-import net.josesernamacia.powerpro.CalcularPotenActivity
-import net.josesernamacia.powerpro.CuadroActivity
-import net.josesernamacia.powerpro.PhotovoltaicActivity
-import net.josesernamacia.powerpro.R
+import net.josesernamacia.powerpro.ui.modules.CalcularAmpeActivity
+import net.josesernamacia.powerpro.ui.modules.CalcularPotenActivity
+import net.josesernamacia.powerpro.ui.modules.CuadroActivity
+import net.josesernamacia.powerpro.ui.modules.PhotovoltaicActivity
 import net.josesernamacia.powerpro.databinding.FragmentModulesBinding
 
 

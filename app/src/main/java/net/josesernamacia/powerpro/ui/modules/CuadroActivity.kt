@@ -1,7 +1,8 @@
-package net.josesernamacia.powerpro
+package net.josesernamacia.powerpro.ui.modules
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import net.josesernamacia.powerpro.R
 import net.josesernamacia.powerpro.databinding.ActivityCuadroBinding
 
 class CuadroActivity : AppCompatActivity() {
@@ -36,9 +37,15 @@ class CuadroActivity : AppCompatActivity() {
             // Mostrar el resumen en el textView
             val resumenText = StringBuilder()
             for (elemento in elementsList) {
-                resumenText.append("${elemento.name} - ${elemento.quantity} unidades - Precio unitario: ${String.format("%.2f", elemento.price)}\n")
+                resumenText.append(
+                    getString(
+                        R.string.unidades_precio_unitario,
+                        elemento.name,
+                        elemento.quantity,
+                        String.format("%.2f", elemento.price)
+                    ))
             }
-            resumenText.append("Costo total: ${String.format("%.2f", costoTotal)}")
+            resumenText.append(getString(R.string.costo_total, String.format("%.2f", costoTotal)))
             binding.tvMostrarResumen.text = resumenText.toString()
         }
     }

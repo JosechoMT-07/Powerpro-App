@@ -1,7 +1,8 @@
-package net.josesernamacia.powerpro
+package net.josesernamacia.powerpro.ui.modules
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import net.josesernamacia.powerpro.R
 import net.josesernamacia.powerpro.databinding.ActivityCalcularPotenBinding
 
 class CalcularPotenActivity : AppCompatActivity() {
@@ -25,9 +26,13 @@ class CalcularPotenActivity : AppCompatActivity() {
                 val corriente = potencia / voltaje
                 val longitudMaxima = potencia / (corriente * caidaVoltajePermitida)
 
-                binding.textView2.text = "Longitud máxima del cable: ${String.format("%.2f", longitudMaxima)} metros"
+                binding.textView2.text = getString(
+                    R.string.longitud_m_xima_del_cable_metros,
+                    String.format("%.2f", longitudMaxima)
+                )
             } else {
-                binding.textView2.text = "Por favor, ingresa la potencia, el voltaje y el porcentaje de pérdida requeridos."
+                binding.textView2.text =
+                    getString(R.string.por_favor_ingresa_la_potencia_el_voltaje_y_el_porcentaje_de_p_rdida_requeridos)
             }
         }
 

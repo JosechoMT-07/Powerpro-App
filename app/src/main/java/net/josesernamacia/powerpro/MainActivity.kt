@@ -5,9 +5,9 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.google.firebase.firestore.FirebaseFirestore
 import net.josesernamacia.powerpro.databinding.ActivityMainBinding
-import net.josesernamacia.powerpro.fragments.ModulesFragment
-import net.josesernamacia.powerpro.fragments.NewsFragment
-import net.josesernamacia.powerpro.fragments.YouFragment
+import net.josesernamacia.powerpro.ui.fragments.ModulesFragment
+import net.josesernamacia.powerpro.ui.fragments.NewsFragment
+import net.josesernamacia.powerpro.ui.fragments.YouFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var youFragment: YouFragment

@@ -1,20 +1,14 @@
-package net.josesernamacia.powerpro.fragments
+package net.josesernamacia.powerpro.ui.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.CollectionReference
-import com.google.firebase.firestore.DocumentChange
-import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.FirebaseFirestoreException
-import com.google.firebase.firestore.QuerySnapshot
 import net.josesernamacia.powerpro.R
 import net.josesernamacia.powerpro.adapters.NewsAdapter
 import net.josesernamacia.powerpro.databinding.FragmentNewsBinding
@@ -70,7 +64,8 @@ class NewsFragment : Fragment(), NewsAdapter.NewsAdapterClickInterface  {
             newsList.addAll(listNews)
             adapter.notifyDataSetChanged()
         }.addOnFailureListener {
-            Toast.makeText(context, "Error al cargar la lista de noticias", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context,
+                getString(R.string.error_al_cargar_la_lista_de_noticias), Toast.LENGTH_SHORT).show()
         }
     }
 

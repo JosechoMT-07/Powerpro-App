@@ -62,6 +62,13 @@
     <string name="welcome_to">Welcome to</string>
     <string name="nombre">Nombre</string>
     <string name="test">test</string>
+    <string name="producci_n_anual_estimada_kwh">Producción anual estimada: %1$s kWh</string>
+    <string name="por_favor_ingrese_valores_v_lidos_para_todos_los_campos">Por favor ingrese valores válidos para todos los campos.</string>
+    <string name="error_al_cargar_la_lista_de_noticias">Error al cargar la lista de noticias</string>
+    <string name="longitud_m_xima_del_cable_metros">Longitud máxima del cable: %1$s metros</string>
+    <string name="por_favor_ingresa_la_potencia_el_voltaje_y_el_porcentaje_de_p_rdida_requeridos">Por favor, ingresa la potencia, el voltaje y el porcentaje de pérdida requeridos.</string>
+    <string name="unidades_precio_unitario">%1$s - %2$s unidades - Precio unitario: %3$s €\n</string>
+    <string name="costo_total">Costo total: %1$s €</string>
 
 
 </resources>

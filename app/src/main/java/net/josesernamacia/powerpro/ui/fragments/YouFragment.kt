@@ -1,4 +1,4 @@
-package net.josesernamacia.powerpro.fragments
+package net.josesernamacia.powerpro.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,13 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import net.josesernamacia.powerpro.MainActivity
-import net.josesernamacia.powerpro.R
-import net.josesernamacia.powerpro.autentication.AuthActivity
+import net.josesernamacia.powerpro.ui.autentication.AuthActivity
 import net.josesernamacia.powerpro.databinding.FragmentYouBinding
 
 
@@ -45,14 +42,11 @@ class YouFragment : Fragment() {
 
         binding.tvEmailUser.text = emailUser
 
-        //para añadir algun campo más a la bbdd tenemos que rellenar en el hashmap
         binding.btnSave.setOnClickListener {
             db.collection("users").document(emailUser.toString()).set(
                 hashMapOf("name" to binding.edNameUser.text.toString())
             )
         }
-
-
 
 
         mainActivity = MainActivity()

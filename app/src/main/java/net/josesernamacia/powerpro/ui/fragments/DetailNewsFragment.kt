@@ -1,4 +1,4 @@
-package net.josesernamacia.powerpro.fragments
+package net.josesernamacia.powerpro.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import net.josesernamacia.powerpro.R
 import net.josesernamacia.powerpro.databinding.FragmentDetailNewsBinding
 import net.josesernamacia.powerpro.model.News
 
@@ -13,12 +16,14 @@ import net.josesernamacia.powerpro.model.News
 class DetailNewsFragment : Fragment() {
     private lateinit var binding: FragmentDetailNewsBinding
     private var newsData: News? = null
+    private lateinit var storageRef: StorageReference
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentDetailNewsBinding.inflate(inflater, container, false)
+        init()
         return binding.root
     }
 
@@ -49,12 +54,16 @@ class DetailNewsFragment : Fragment() {
             binding.tvTextoNoticia.setText(newsData?.text)
 
 
-            // Cargar la imagen utilizando Glide
-            Glide.with(this)
-                .load(newsData?.image)
+            val imageRef = storageRef.child("noticias").child(newsData!!.image)
+            Glide.with(binding.fragmentDetailNews.context)
+                .load(imageRef)
+                .error(R.drawable.ic_launcher_background)
                 .into(binding.ivFotoNoticia)
-
         }
+    }
+
+    private fun init() {
+        storageRef = FirebaseStorage.getInstance().getReference()
     }
 
 

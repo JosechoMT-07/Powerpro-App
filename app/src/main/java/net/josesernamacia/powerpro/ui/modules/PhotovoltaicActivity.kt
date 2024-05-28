@@ -1,7 +1,8 @@
-package net.josesernamacia.powerpro
+package net.josesernamacia.powerpro.ui.modules
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import net.josesernamacia.powerpro.R
 import net.josesernamacia.powerpro.databinding.ActivityPhotovoltaicBinding
 import kotlin.math.PI
 import kotlin.math.abs
@@ -50,9 +51,13 @@ class PhotovoltaicActivity : AppCompatActivity() {
 
                 // Calcular la producción anual
                 val annualProduction = powerInstalled * hoursOfSun * adjustedEfficiency * incidence
-                binding.tvResult.text = "Producción anual estimada: ${String.format("%.2f", annualProduction)} kWh"
+                binding.tvResult.text = getString(
+                    R.string.producci_n_anual_estimada_kwh,
+                    String.format("%.2f", annualProduction)
+                )
             } else {
-                binding.tvResult.text = "Por favor ingrese valores válidos para todos los campos."
+                binding.tvResult.text =
+                    getString(R.string.por_favor_ingrese_valores_v_lidos_para_todos_los_campos)
             }
         }
     }

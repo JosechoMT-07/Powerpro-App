@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Powerpro"
         tools:targetApi="31">
         <activity
-            android:name=".autentication.AuthActivity"
+            android:name=".ui.autentication.AuthActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -27,16 +27,16 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".CuadroActivity"
+            android:name=".ui.modules.CuadroActivity"
             android:exported="false" />
         <activity
-            android:name=".CalcularPotenActivity"
+            android:name=".ui.modules.CalcularPotenActivity"
             android:exported="false" />
         <activity
-            android:name=".CalcularAmpeActivity"
+            android:name=".ui.modules.CalcularAmpeActivity"
             android:exported="false" />
         <activity
-            android:name=".PhotovoltaicActivity"
+            android:name=".ui.modules.PhotovoltaicActivity"
             android:exported="false" />
 
 
