@@ -69,6 +69,26 @@
     <string name="por_favor_ingresa_la_potencia_el_voltaje_y_el_porcentaje_de_p_rdida_requeridos">Por favor, ingresa la potencia, el voltaje y el porcentaje de pérdida requeridos.</string>
     <string name="unidades_precio_unitario">%1$s - %2$s unidades - Precio unitario: %3$s €\n</string>
     <string name="costo_total">Costo total: %1$s €</string>
+    <string name="error_al_iniciar_sesi_n">Error al iniciar sesión</string>
+    <string name="correo_electr_nico_o_contrase_a_incorrectos_por_favor_int_ntelo_de_nuevo">Correo electrónico o contraseña incorrectos. Por favor, inténtelo de nuevo.</string>
+    <string name="error_pass">Error de contraseña</string>
+    <string name="err_pass_msg">La contraseña debe tener al menos 6 caracteres, incluyendo al menos una letra mayúscula, una letra minúscula y un número.</string>
+    <string name="pass_requisitos">La contraseña debe tener al menos 6 caracteres, incluyendo al menos una letra mayúscula, una letra minúscula y un número.</string>
+    <string name="conf_cuenta">Cuenta creada correctamente</string>
+    <string name="error_account">Error al crear una cuenta</string>
+    <string name="create_account">Se ha producido un error al crear la cuenta. Por favor, inténtelo de nuevo.</string>
+    <string name="empty_fields">Campos vacíos</string>
+    <string name="empty_fields_msg">Rellene todos los campos</string>
+    <string name="campos_vac_os">Campos vacíos</string>
+    <string name="rellene_todos_los_campos">Rellene todos los campos</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="example_hotmail_com">example@hotmail.com</string>
+    <string name="email">Email</string>
+    <string name="sign_in">Sign In</string>
+    <string name="password">Password</string>
+    <string name="password_auth">Password</string>
+    <string name="sign_in_auth">Sign In</string>
+    <string name="sign_up">Sign Up</string>
 
 
 </resources>

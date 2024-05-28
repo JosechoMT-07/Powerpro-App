@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
 import net.josesernamacia.powerpro.MainActivity
+import net.josesernamacia.powerpro.R
 import net.josesernamacia.powerpro.databinding.ActivityAuthBinding
 
 class AuthActivity : AppCompatActivity() {
@@ -43,7 +44,7 @@ class AuthActivity : AppCompatActivity() {
                 val passwordPattern = Regex("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,}\$")
                 if (!passwordPattern.matches(password)) {
                     // Si la contraseña no cumple con los criterios, mostrar un error
-                    showAlert("Password ERROR","Password must be at least 6 characters long, including at least one uppercase letter, one lowercase letter, and one number.")
+                    showAlert(getString(R.string.error_pass), getString(R.string.err_pass_msg))
                     return@setOnClickListener
                 }
 
@@ -53,13 +54,15 @@ class AuthActivity : AppCompatActivity() {
                         if (task.isSuccessful) {
                             //FirebaseAuth.getInstance().currentUser?.sendEmailVerification()
                             //showAlert("Email verification sent","Please check your email, and verify your account")
-                            showAlert("Email creation account","Cuenta creada correctamente")
+                            showAlert(getString(R.string.pass_requisitos),
+                                getString(R.string.conf_cuenta))
                         } else {
-                            showAlert("Error creating account","An error occurred while creating the account. Please try again.")
+                            showAlert(getString(R.string.error_account),
+                                getString(R.string.create_account))
                         }
                     }
             } else {
-                showAlert("Empty fields","Please complete all fields")
+                showAlert(getString(R.string.empty_fields), getString(R.string.empty_fields_msg))
             }
         }
 
@@ -75,12 +78,14 @@ class AuthActivity : AppCompatActivity() {
                             val user = FirebaseAuth.getInstance().currentUser
                             showHome(user?.email ?: "")
                         } else {
-                            showAlert("Error logging in","Incorrect email or password. Please try again.")
+                            showAlert(getString(R.string.error_al_iniciar_sesi_n),
+                                getString(R.string.correo_electr_nico_o_contrase_a_incorrectos_por_favor_int_ntelo_de_nuevo))
                         }
                     }
 
             } else {
-                showAlert("Empty fields","Please complete all fields")
+                showAlert(getString(R.string.campos_vac_os),
+                    getString(R.string.rellene_todos_los_campos))
             }
         }
     }
@@ -89,7 +94,7 @@ class AuthActivity : AppCompatActivity() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(titulo)
         builder.setMessage(msg)
-        builder.setPositiveButton("Aceptar",null)
+        builder.setPositiveButton(getString(R.string.aceptar),null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }
