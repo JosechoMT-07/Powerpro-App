@@ -89,6 +89,7 @@
     <string name="password_auth">Password</string>
     <string name="sign_in_auth">Sign In</string>
     <string name="sign_up">Sign Up</string>
+    <string name="creacionCuenta">Registro</string>
 
 
 </resources>

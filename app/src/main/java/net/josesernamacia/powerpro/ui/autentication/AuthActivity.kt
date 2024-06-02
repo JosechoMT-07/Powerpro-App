@@ -54,7 +54,7 @@ class AuthActivity : AppCompatActivity() {
                         if (task.isSuccessful) {
                             //FirebaseAuth.getInstance().currentUser?.sendEmailVerification()
                             //showAlert("Email verification sent","Please check your email, and verify your account")
-                            showAlert(getString(R.string.pass_requisitos),
+                            showAlert(getString(R.string.creacionCuenta),
                                 getString(R.string.conf_cuenta))
                         } else {
                             showAlert(getString(R.string.error_account),
