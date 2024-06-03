@@ -96,19 +96,4 @@ class CalcularAmpeActivity : AppCompatActivity() {
         return capacidadCorriente
     }
 
-    private fun redondearDiametro(diametro: Double): Double {
-        // Tamaños comunes de diámetro de cable en mm
-        val tamanios = arrayOf(0.75, 1.00, 1.5, 2.5, 4.0, 6.0, 10.0, 16.0, 25.0, 35.0, 50.0, 70.0, 95.0, 120.0, 150.0, 185.0, 240.0, 300.0, 400.0)
-
-        // Encuentra el tamaño de cable más cercano al diámetro calculado
-        var diametroRedondeado: Double = tamanios[0]
-        for (tamano in tamanios) {
-            if (tamano >= diametro) {
-                diametroRedondeado = tamano
-                break
-            }
-        }
-
-        return diametroRedondeado
-    }
 }
